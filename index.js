@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+
 app.use(express());
 app.use(express.json());
 
@@ -69,7 +70,7 @@ app.delete("/delete/:id", (req,res)=>{
 
 })
 
-port = 4000;
+port =process.env.port || 4000;
 app.listen(port, () => {
   console.log(`web server run on this port :${port}`);
 });
